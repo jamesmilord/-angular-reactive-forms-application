@@ -1,0 +1,97 @@
+<md-card>
+  <md-card-header>Please verify info</md-card-header>
+  <md-card-content>
+    <div class="main">
+      <div class="wrapper">
+        <div class="category"><p>Title</p></div>
+        <div class="info"><p>{{form.signerCount.authorizedsigner}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>First Name</p></div>
+        <div class="info"><p>{{form.signerDetails.firstname}}</p></div>
+      </div>
+      <div class="wrapper" *ngIf="!form.signerDetails.Middlename==''">
+        <div class="category"><p>Middle Name</p></div>
+        <div class="info"><p>{{form.signerDetails.Middlename}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Last Name</p></div>
+        <div class="info"><p>{{form.signerDetails.lastname}}</p></div>
+      </div>
+      <div class="wrapper" *ngIf="!form.signerDetails.Maidenname==''">
+        <div class="category"><p>Maiden Name</p></div>
+        <div class="info"><p>{{form.signerDetails.Maidenname}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Social Security Number <br/>Tax Identification Id</p></div>
+        <div class="info"><p>{{form.signerDetails.socialsec}}</p></div>
+      </div>
+      <div class="wrapper" *ngIf="!form.signerDetails.citizenship==''">
+        <div class="category"><p>Country of Citizenship/p></div>
+        <div class="info"><p>{{form.signerDetails.citizenship}}</p></div>
+      </div>
+      <div class="wrapper" *ngIf="!form.signerDetails.countryofbirth==''">
+        <div class="category"><p>Country of Birth</p></div>
+        <div class="info"><p>{{form.signerDetails.countryofbirth}}</p></div>
+      </div>
+      <div class="wrapper" *ngIf="!form.signerDetails.dateofbirth==''">
+        <div class="category"><p>Date of Birth</p></div>
+        <div class="info"><p>{{form.signerDetails.dateofbirth}}</p></div>
+      </div>
+      <div class="wrapper" *ngIf="!form.signerDetails.gender==''">
+        <div class="category"><p>Gender</p></div>
+        <div class="info"><p>{{form.signerDetails.gender}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Address</p></div>
+        <div class="info"><p>{{form.residential.address}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>City</p></div>
+        <div class="info"><p>{{form.residential.city}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category" *ngIf="!form.residential.state==''"><p>State</p></div>
+        <div class="info"><p>{{form.residential.state}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Country</p></div>
+        <div class="info"><p>{{form.residential.country}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Zip Code</p></div>
+        <div class="info"><p>{{form.residential.zipCode}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Main Telephone Number</p></div>
+        <div class="info"><p>{{form.contact.mainPhone}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category" *ngIf="!form.contact.cellPhone==''"><p>CellPhone</p></div>
+        <div class="info"><p>{{form.contact.cellPhone}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>PEP</p></div>
+        <div class="info"><p>{{form.pep.pep}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>ID</p></div>
+        <div class="info"><p>{{form.document.type}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>ID number</p></div>
+        <div class="info"><p>{{form.document.number}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Date Issued</p></div>
+        <div class="info"><p>{{form.document.dateIssued}}</p></div>
+      </div>
+      <div class="wrapper">
+        <div class="category"><p>Expiration Date</p></div>
+        <div class="info"><p>{{form.document.expiration}}</p></div>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>
+
+<!--{{data[masterArray[i]][content[i]]}}-->

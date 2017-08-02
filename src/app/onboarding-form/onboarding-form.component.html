@@ -1,0 +1,291 @@
+<div class="main">
+  <md-card>
+    <md-card-header md-direction="left">{{formSection}}</md-card-header>
+     <md-card-content>
+      <form [formGroup]="dataForm" >
+        <div [ngSwitch]="formSection">
+          <div *ngSwitchCase="'Authorized signer'">
+            <div formGroupName="signerCount">
+              <div class="input-area">
+                <div class="wrapper-label">
+                  <label for="user">How many authorized user *</label>
+                </div>
+                <div class="user-count">
+                  <input
+                    type="number"
+                    id="count"
+                    formControlName="authorizedsigner">
+                    <div class="help" *ngIf="!dataForm.controls.signerCount.controls.authorizedsigner.valid && dataForm.controls.signerCount.controls.authorizedsigner.touched">please enter number *</div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div *ngSwitchCase="'Authorized Signer Details'" >
+              <div formGroupName="signerDetails">
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="title">Title *</label>
+                  </div>
+                  <div class="inputs">
+                    <md-select name="title" formControlName="title">
+                      <md-option *ngFor="let t of titles" [value]="t.value" >
+                        {{t.viewValue}}
+                      </md-option>
+                    </md-select>
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.title.valid && dataForm.controls.signerDetails.controls.title.touched ">please enter title *</div>
+                    <!--<select FormControlName="title">
+                      <option value="" disabled>Select a title</option>
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                    </select>-->
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="firstname">First Name *</label>
+                  </div>
+                  <div class="inputs">
+                    <input type="" name="firstname"  formControlName="firstname">
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.firstname.valid && dataForm.controls.signerDetails.controls.firstname.touched">please enter firstname *</div>
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="middlename">Middle Name  </label>
+                  </div>
+                  <div class="inputs">
+                    <input type="text" name="" formControlName="middlename" >
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.middlename.valid && dataForm.controls.signerDetails.controls.middlename.touched">please enter letters *</div>
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="lastname">Last Name *</label>
+                  </div>
+                  <div class="inputs">
+                    <input type="text" name="" formControlName="lastname"  >
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.lastname.valid && dataForm.controls.signerDetails.controls.lastname.touched ">please enter last name *</div>
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="maidenname">Maiden Name (if applicable)</label>
+                  </div>
+                  <div class="inputs">
+                    <input type="text" name="" formControlName="Maidenname">
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.Maidenname.valid && dataForm.controls.signerDetails.controls.Maidenname.touched">please enter all letters *</div>
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="identification" class="socialnum">Social Security Number/ Tax *<br/>Identification Number </label>
+                  </div>
+                  <div class="inputs">
+                    <input type="" placeholder="number without dashes" name="" formControlName="socialsec" >
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.socialsec.valid && dataForm.controls.signerDetails.controls.socialsec.touched ">please enter valid ID number *</div>
+                  </div>
+                </div>
+                <md-card-header md-direction="left">Other Details</md-card-header>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="citizenship">Country of Citizenship </label>
+                  </div>
+                  <div class="inputs">
+                    <input type="text" name="" formControlName="citizenship">
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.citizenship.valid && dataForm.controls.signerDetails.controls.citizenship.touched">please enter all letters *</div>
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="countryofbirth">Country of Birth  </label>
+                  </div>
+                  <div class="inputs">
+                    <input type="text" name="" formControlName="countryofbirth" >
+                    <div class="help" *ngIf="!dataForm.controls.signerDetails.controls.countryofbirth.valid && dataForm.controls.signerDetails.controls.countryofbirth.touched">please enter all letters *</div>
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="dateofbirth">Date of Birth  </label>
+                  </div>
+                  <div class="date">
+                    <md-input-container>
+                    <input class="date-input" mdInput [mdDatepicker]="picker" placeholder="mm/dd/yyyy" formControlName="dateofbirth">
+                    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                    </md-input-container>
+                    <md-datepicker #picker></md-datepicker>
+                  </div>
+                </div>
+                <div class="input2-area">
+                  <div class="label2">
+                    <label for="gender">Gender  </label>
+                  </div>
+                  <div class="radio" >
+                  <md-radio-group class=""  formControlName="gender">
+                      <md-radio-button class="" *ngFor="let gender of genders" [value]="gender" >
+                        {{gender}}?
+                      </md-radio-button>
+                      </md-radio-group>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <div *ngSwitchCase="'Residential Address'">
+            <div formGroupName="residential">
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="address">Address *</label>
+                </div>
+                <div class="inputs">
+                  <input type="text" formControlName="address">
+                  <div class="help" *ngIf="!dataForm.controls.residential.controls.address.valid && dataForm.controls.residential.controls.address.touched">please enter address *</div>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="city">City *</label>
+                </div>
+                <div class="inputs">
+                  <input type="text" name="city" value="" formControlName="city">
+                  <div class="help" *ngIf="!dataForm.controls.residential.controls.city.valid && dataForm.controls.residential.controls.city.touched">please enter city *</div>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="state">State  </label>
+                </div>
+                <div class="inputs">
+                  <input type="text" name="" value=""formControlName="state">
+                  <div class="help" *ngIf="!dataForm.controls.residential.controls.state.valid && dataForm.controls.residential.controls.state.touched">please enter all letters state *</div>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="country">Country *</label>
+                </div>
+                <div class="inputs">
+                  <input type="text" name="" value="" formControlName="country">
+                  <div class="help" *ngIf="!dataForm.controls.residential.controls.country.valid && dataForm.controls.residential.controls.country.touched">please enter country *</div>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="maidenname">Zip Code *</label>
+                </div>
+                <div class="inputs">
+                  <input type="tel" name="" value="" formControlName="zipCode">
+                  <div class="help" *ngIf="!dataForm.controls.residential.controls.zipCode.valid && dataForm.controls.residential.controls.zipCode.touched">please enter a valid zip Code *</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngSwitchCase="'Contact Details'">
+            <div formGroupName="contact">
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="tel">Main Telephone Number *</label>
+                </div>
+                <div class="inputs">
+                  <input type="tel" name="address" formControlName="mainPhone">
+                  <div class="help" *ngIf="!dataForm.controls.contact.controls.mainPhone.valid && dataForm.controls.contact.controls.mainPhone.touched">please enter valid phone number *</div>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="cel">Cell Phone Number </label>
+                </div>
+                <div class="inputs">
+                  <input type="tel" name="cellphone" value="" formControlName="cellPhone">
+                  <div class="help" *ngIf="!dataForm.controls.contact.controls.cellPhone.valid && dataForm.controls.contact.controls.cellPhone.touched">please enter valid phone number *</div>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="email">Business E-mail *</label>
+                </div>
+                <div class="inputs">
+                  <input type="email" name="" value="" formControlName="businessEmail">
+                  <div class="help" *ngIf="!dataForm.controls.contact.controls.businessEmail.valid && dataForm.controls.contact.controls.businessEmail.touched">please enter valid email *</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngSwitchCase="'PEP'">
+            <div formGroupName='pep'>
+              <div class="input2-area">
+                <div class="label3">
+                <p>Are you a Politically Exposed Person(PEP), have or is an<br/>immediate familly member of a Foreign Political Public Figure</p>
+                </div>
+                <div class="radio2" >
+                  <md-radio-group class="" formControlName="pep">
+                    <md-radio-button class="" *ngFor="let res of responses" [value]="res">
+                      {{res.pep}}?
+                    </md-radio-button>
+                  </md-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="input-area">
+              <p>Please complete <a href="" target="_blank">the Noble Bank Certificatio of Politically Exposed Person</a></p>
+            </div>
+          </div>
+          <div *ngSwitchCase="'ID'">
+            <div formGroupName="document">
+              <div class="input2-area">
+                <div class="boxwrapper"*ngFor="let doc of documents">
+                  <div class="checkbox"><md-checkbox  [value]="doc.value" formControlName="type">{{doc.type}}</md-checkbox></div>
+                </div>
+                <div class="help" *ngIf="!dataForm.controls.document.controls.type.valid && dataForm.controls.document.controls.type.touched">please select one ID type above *</div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="id">ID Number *</label>
+                </div>
+                <div class="inputs3">
+                  <input type="text" name="address" value="" formControlName="number">
+                  <div class="help" *ngIf="!dataForm.controls.document.controls.number.valid && dataForm.controls.document.controls.number.touched">please enter valid ID number *</div>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="date">Date issued*</label>
+                </div>
+                <div class="date">
+                  <md-input-container>
+                  <input class="date-input" mdInput [mdDatepicker]="picker1" placeholder="mm/dd/yyyy" formControlName="dateIssued">
+                  <button mdSuffix [mdDatepickerToggle]="picker1"></button>
+                  </md-input-container>
+                  <div class="help" *ngIf="!dataForm.controls.document.controls.dateIssued.valid && dataForm.controls.document.controls.dateIssued.touched">please select a date *</div>
+                  <md-datepicker #picker1></md-datepicker>
+                </div>
+              </div>
+              <div class="input2-area">
+                <div class="label2">
+                  <label for="expiration">Expiration Date *</label>
+                </div>
+                <div class="date">
+                  <md-input-container>
+                  <input class="date-input" mdInput [mdDatepicker]="picker" placeholder="mm/dd/yyyy" formControlName="expiration">
+                  <button mdSuffix [mdDatepickerToggle]="picker"></button>
+                  </md-input-container>
+                  <div class="help" *ngIf="!dataForm.controls.document.controls.expiration.valid && dataForm.controls.document.controls.expiration.touched">please select a date *</div>
+                  <md-datepicker #picker></md-datepicker>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h" *ngIf="formSection =='ID'; else completeButton">
+          <button md-raised-button color="primary" (click)="onComplete()" [disabled]="!this.dataForm.controls[this.control].valid">Complete Authorized Signer Details</button>
+        </div>
+        <ng-template #completeButton>
+          <div class="h">
+            <button md-raised-button color="primary" [disabled]="!this.dataForm.controls[this.control].valid" (click)="onNext()">Next</button>
+          </div>
+        </ng-template>
+      </form>
+    </md-card-content>
+  </md-card>
+
+</div>

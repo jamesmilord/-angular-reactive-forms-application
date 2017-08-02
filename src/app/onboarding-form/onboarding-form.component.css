@@ -1,0 +1,188 @@
+md-card{
+  width: 650px;
+
+  left: 30%;
+  padding: 10px 10px 20px 10px;
+}
+
+md-card-header{
+  font-weight: bold;
+  border-bottom: 1px solid blue;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.input-area {
+  margin-top: 20px;
+  display: flex;
+
+}
+
+.wrapper-label{
+  width: 50%;
+}
+label{
+  float: right;
+
+}
+.user-count{
+  width: 50%;
+
+}
+
+#count{
+  max-width: 35px;
+  border-radius: 4px;
+  float: left;
+  margin-left: 10px;
+}
+.inputs{
+width: 50%;
+float: right;
+}
+md-select{
+  float: left;
+}
+
+.label2{
+width: 48%;
+float: left;
+}
+
+.label3{
+  width: 60%;
+  float: left;
+}
+.inputs input{
+  float: right;
+  width: 100%;
+  height: 20px;
+}
+
+.label2 label{
+  float: right;
+}
+
+
+.input2-area {
+  margin-top: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.input2-area:first-child{
+  margin-top: 15px;
+}
+
+.date{
+  overflow: auto;
+}
+
+md-input-container{
+  margin-left: 10px;
+  float: left;
+}
+
+.gender{
+  display: inline;
+}
+
+.radio{
+  overflow: hidden;
+}
+
+.radio2{
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+
+
+md-radio-group{
+margin-left: 20px;
+float: left;
+}
+
+.socialnum{
+  text-align: right
+}
+
+
+.h{
+  margin-top: 30px;
+  text-align: right;
+}
+
+
+button{
+  margin-right: 20px;
+}
+
+.inputs3{
+width: 50%;
+float: right;
+}
+
+.inputs3 input{
+  float: left;
+  width: 55%;
+  height: 20px;
+}
+
+.date{
+
+  overflow: auto;
+}
+
+md-input-container{
+  margin-left: 10px;
+  float: left;
+}
+
+md-checkbox{
+  display: inline-block;
+  float: left;
+}
+.boxwrapper{
+  position: relative;
+}
+
+.checkbox{
+  overflow: hidden;
+
+}
+
+.boxwrapper:nth-child(3){
+  position: absolute;
+  top: 0px;
+  float: right;
+  left: 50%;
+}
+
+.boxwrapper:nth-child(4){
+  position: absolute;
+  top: 25px;;
+  float: right;
+  left: 50%;
+}
+
+.help {
+    background: #f2edda;
+    padding: 7px;
+    font-size: .9em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    animation: 2s alertAnim forwards;
+}
+
+@keyframes alertAnim {
+    from {
+        opacity:0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity:1;
+        transform: translateY(0);
+    }
+}
